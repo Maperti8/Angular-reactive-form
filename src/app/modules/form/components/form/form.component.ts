@@ -17,7 +17,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   selectedSport: string = '';
-  sports: string[] = ['Football', 'Volleyball', 'Swimming', 'Badminton', 'Table Tennis'];
+  sports: string[] = ['Futbal', 'Volejbal', 'Plávanie', 'Badminton', 'Stolný tenis'];
   profileForm!: FormGroup;
 
   constructor(private fb: FormBuilder, public dialog: MatDialog, private breakpointObserver: BreakpointObserver) {}
@@ -36,11 +36,11 @@ export class FormComponent implements OnInit {
   onSubmit() {
     if (this.profileForm.valid) {
       const formData: FormModel = this.profileForm.value;
-      console.log('Form submitted:', formData);
-      this.openModal('Form submitted successfully');
+      console.log('Forma zaslaná:', formData);
+      this.openModal('Form úspešne zaslaná');
     } else {
       this.profileForm.markAllAsTouched();
-      this.openModal('Form is invalid. Please check the fields.');
+      this.openModal('Forma je neplatná. Prosím skontrolujte polia.');
     }
   }
 

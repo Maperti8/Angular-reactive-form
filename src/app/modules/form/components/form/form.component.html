@@ -3,7 +3,7 @@
     <mat-card fxFlex.lt-md="90%" fxFlex="70%">
 
       <mat-card-header>
-        <mat-card-title>Profile Information</mat-card-title>
+        <mat-card-title>Profilové informácie</mat-card-title>
       </mat-card-header>
 
       <mat-card-content>
@@ -11,9 +11,9 @@
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
               <mat-form-field class="full-width" appearance="fill">
-                <input matInput placeholder="First Name" formControlName="firstName">
-                <mat-error *ngIf="profileForm.get('firstName')?.hasError('required')">First Name is required</mat-error>
-                <mat-error *ngIf="profileForm.get('firstName')?.hasError('maxlength')">Maximum length is 25 characters</mat-error>
+                <input matInput placeholder="Meno" formControlName="firstName">
+                <mat-error *ngIf="profileForm.get('firstName')?.hasError('required')">Zadajte meno</mat-error>
+                <mat-error *ngIf="profileForm.get('firstName')?.hasError('maxlength')">Maximálna dĺžka je 25 charakterov</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -21,9 +21,9 @@
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
               <mat-form-field class="full-width" appearance="fill">
-                <input matInput placeholder="Last Name" formControlName="lastName">
-                <mat-error *ngIf="profileForm.get('lastName')?.hasError('required')">Last Name is required</mat-error>
-                <mat-error *ngIf="profileForm.get('lastName')?.hasError('maxlength')">Maximum length is 25 characters</mat-error>
+                <input matInput placeholder="Priezvisko" formControlName="lastName">
+                <mat-error *ngIf="profileForm.get('lastName')?.hasError('required')">Zadajte priezvisko</mat-error>
+                <mat-error *ngIf="profileForm.get('lastName')?.hasError('maxlength')">Maximálna dĺžka je 25 charakterov</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -31,21 +31,21 @@
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
               <mat-form-field class="full-width" appearance="fill">
-                <input matInput type="number" placeholder="Age" formControlName="age">
-                <mat-error *ngIf="profileForm.get('age')?.hasError('required')">Age is required</mat-error>
-                <mat-error *ngIf="profileForm.get('age')?.hasError('min')">Age must be a non-negative number</mat-error>
+                <input matInput type="number" placeholder="Vek" formControlName="age">
+                <mat-error *ngIf="profileForm.get('age')?.hasError('required')">Zadajte vek</mat-error>
+                <mat-error *ngIf="profileForm.get('age')?.hasError('min')">Vek nesmie byť negatívne číslo</mat-error>
               </mat-form-field>
             </div>
           </div>
 
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
-              <mat-checkbox class="full-width" formControlName="prevAttended" color="primary"><p>Previously attended</p></mat-checkbox>
+              <mat-checkbox class="full-width" formControlName="prevAttended" color="primary"><p>Predošlý účastník</p></mat-checkbox>
             </div>
           </div>
 
           <div class="row" fxLayout.lt-md="column">
-            <p>Preferred sport:</p>
+            <p>Preferovaný šport:</p>
           </div>
 
           <div class="row" fxLayout.lt-md="column">
@@ -55,7 +55,7 @@
                   <mat-radio-button *ngFor="let sport of sports" [value]="sport" color="primary">{{ sport }}</mat-radio-button>
                 </mat-radio-group>
                 <ng-container *ngIf="profileForm.get('sport')?.touched && profileForm.get('sport')?.hasError('required')">
-                  <mat-error>Sport is required</mat-error>
+                  <mat-error>Zadajte šport</mat-error>
                 </ng-container>
               </div>
             </div>
@@ -65,8 +65,8 @@
             <div fxFlex="100" fxLayout.lt-md="100%">
               <div>
                 <mat-form-field class="full-width" appearance="fill">
-                  <textarea matInput placeholder="Comment" formControlName="comment"></textarea>
-                  <mat-error *ngIf="profileForm.get('comment')?.hasError('maxlength')">Maximum length is 4000 characters</mat-error>
+                  <textarea matInput placeholder="Komentár" formControlName="comment"></textarea>
+                  <mat-error *ngIf="profileForm.get('comment')?.hasError('maxlength')">Maximálna dĺžka je 4000 charakterov</mat-error>
                 </mat-form-field>
               </div>
             </div>
@@ -76,7 +76,7 @@
 
       <div class="row"></div>
       <mat-card-actions>
-        <button (click)="onSubmit()" mat-raised-button color="primary">Submit</button>
+        <button (click)="onSubmit()" mat-raised-button color="primary">Poslať</button>
       </mat-card-actions>
 
     </mat-card>
